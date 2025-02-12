@@ -52,12 +52,12 @@ function TicketSelection() {
 					<h3 className='text-lg font-semibold mb-3' id='ticket-type-heading'>
 						Select Ticket Type:
 					</h3>
-					<div className='flex flex-row gap-4'>
+					<div className='flex flex-col sm:flex-row sm:gap-4'>
 						<button
 							onClick={() => setTicketType('Regular')}
 							aria-pressed={ticketType === 'Regular'}
 							aria-labelledby='ticket-type-heading'
-							className={`p-6 w-1/3 rounded-lg border text-left ${
+							className={`p-6 w-full sm:w-1/3 rounded-lg border text-left mb-4 sm:mb-0 ${
 								ticketType === 'Regular'
 									? 'bg-blue-500 text-white border-blue-400'
 									: 'bg-[#0d1f21] border-gray-600'
@@ -71,7 +71,7 @@ function TicketSelection() {
 							onClick={() => setTicketType('VIP')}
 							aria-pressed={ticketType === 'VIP'}
 							aria-labelledby='ticket-type-heading'
-							className={`p-6 w-1/3 rounded-lg border text-left ${
+							className={`p-6 w-full sm:w-1/3 rounded-lg border text-left mb-4 sm:mb-0 ${
 								ticketType === 'VIP'
 									? 'bg-blue-500 text-white border-blue-400'
 									: 'bg-[#0d1f21] border-gray-600'
@@ -85,7 +85,7 @@ function TicketSelection() {
 							onClick={() => setTicketType('VVIP')}
 							aria-pressed={ticketType === 'VVIP'}
 							aria-labelledby='ticket-type-heading'
-							className={`p-6 w-1/3 rounded-lg border text-left ${
+							className={`p-6 w-full sm:w-1/3 rounded-lg border text-left ${
 								ticketType === 'VVIP'
 									? 'bg-blue-500 text-white border-blue-400'
 									: 'bg-[#0d1f21] border-gray-600'
