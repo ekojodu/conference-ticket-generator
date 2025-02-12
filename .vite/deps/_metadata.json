@@ -1,0 +1,46 @@
+{
+  "hash": "d6d00e22",
+  "configHash": "66aafe10",
+  "lockfileHash": "4224c229",
+  "browserHash": "f36c857f",
+  "optimized": {
+    "react": {
+      "src": "../../node_modules/react/index.js",
+      "file": "react.js",
+      "fileHash": "8eca29d7",
+      "needsInterop": true
+    },
+    "react-dom/client": {
+      "src": "../../node_modules/react-dom/client.js",
+      "file": "react-dom_client.js",
+      "fileHash": "40bdc6f9",
+      "needsInterop": true
+    },
+    "react-router-dom": {
+      "src": "../../node_modules/react-router-dom/dist/index.mjs",
+      "file": "react-router-dom.js",
+      "fileHash": "5bc2c08a",
+      "needsInterop": false
+    },
+    "framer-motion": {
+      "src": "../../node_modules/framer-motion/dist/es/index.mjs",
+      "file": "framer-motion.js",
+      "fileHash": "e0777c1a",
+      "needsInterop": false
+    },
+    "react-barcode": {
+      "src": "../../node_modules/react-barcode/lib/react-barcode.js",
+      "file": "react-barcode.js",
+      "fileHash": "8813fc3f",
+      "needsInterop": true
+    }
+  },
+  "chunks": {
+    "chunk-FPEHQ7MX": {
+      "file": "chunk-FPEHQ7MX.js"
+    },
+    "chunk-DDNM7ENY": {
+      "file": "chunk-DDNM7ENY.js"
+    }
+  }
+}

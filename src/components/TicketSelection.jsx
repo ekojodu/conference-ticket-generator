@@ -21,6 +21,10 @@ function TicketSelection() {
 		navigate('/second-page');
 	};
 
+	const handleCancel = () => {
+		navigate('/'); // Change this to your desired cancel route
+	};
+
 	return (
 		<div className='flex flex-col items-center justify-center min-h-screen bg-[#0a1b1e] p-6 text-white'>
 			<motion.div
@@ -97,12 +101,21 @@ function TicketSelection() {
 					</select>
 				</div>
 
-				<button
-					onClick={handleNext}
-					className='w-full mt-6 bg-blue-600 text-white py-4 rounded-lg hover:bg-blue-700 transition border border-blue-500'
-				>
-					Next
-				</button>
+				{/* Container for Cancel and Next buttons */}
+				<div className='flex flex-col sm:flex-row gap-4 mt-6'>
+					<button
+						onClick={handleCancel}
+						className='w-full sm:w-1/2 bg-gray-600 text-white py-4 rounded-lg hover:bg-gray-700 transition border border-gray-500'
+					>
+						Cancel
+					</button>
+					<button
+						onClick={handleNext}
+						className='w-full sm:w-1/2 bg-blue-600 text-white py-4 rounded-lg hover:bg-blue-700 transition border border-blue-500'
+					>
+						Next
+					</button>
+				</div>
 			</motion.div>
 		</div>
 	);
