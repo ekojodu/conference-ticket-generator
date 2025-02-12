@@ -32,8 +32,12 @@ function TicketSelection() {
 				animate={{ opacity: 1 }}
 				transition={{ duration: 1 }}
 				className='bg-[#102a2d] p-8 rounded-2xl shadow-xl w-full max-w-3xl border border-gray-700'
+				aria-labelledby='ticket-selection-heading'
 			>
-				<h2 className='text-3xl font-bold text-center border-b border-gray-700 pb-4'>
+				<h2
+					id='ticket-selection-heading'
+					className='text-3xl font-bold text-center border-b border-gray-700 pb-4'
+				>
 					Techember Fest &apos;25
 				</h2>
 				<p className='text-center mt-4 text-gray-400'>
@@ -45,10 +49,14 @@ function TicketSelection() {
 				</p>
 
 				<div className='mt-6 border border-gray-700 p-6 rounded-lg'>
-					<h3 className='text-lg font-semibold mb-3'>Select Ticket Type:</h3>
+					<h3 className='text-lg font-semibold mb-3' id='ticket-type-heading'>
+						Select Ticket Type:
+					</h3>
 					<div className='flex flex-row gap-4'>
 						<button
 							onClick={() => setTicketType('Regular')}
+							aria-pressed={ticketType === 'Regular'}
+							aria-labelledby='ticket-type-heading'
 							className={`p-6 w-1/3 rounded-lg border text-left ${
 								ticketType === 'Regular'
 									? 'bg-blue-500 text-white border-blue-400'
@@ -61,6 +69,8 @@ function TicketSelection() {
 						</button>
 						<button
 							onClick={() => setTicketType('VIP')}
+							aria-pressed={ticketType === 'VIP'}
+							aria-labelledby='ticket-type-heading'
 							className={`p-6 w-1/3 rounded-lg border text-left ${
 								ticketType === 'VIP'
 									? 'bg-blue-500 text-white border-blue-400'
@@ -73,6 +83,8 @@ function TicketSelection() {
 						</button>
 						<button
 							onClick={() => setTicketType('VVIP')}
+							aria-pressed={ticketType === 'VVIP'}
+							aria-labelledby='ticket-type-heading'
 							className={`p-6 w-1/3 rounded-lg border text-left ${
 								ticketType === 'VVIP'
 									? 'bg-blue-500 text-white border-blue-400'
@@ -92,6 +104,7 @@ function TicketSelection() {
 						value={ticketCount}
 						onChange={(e) => setTicketCount(e.target.value)}
 						className='w-full p-3 mt-2 border border-gray-600 rounded-lg text-gray-900'
+						aria-label='Select number of tickets'
 					>
 						{[...Array(3).keys()].map((num) => (
 							<option key={num + 1} value={num + 1}>
@@ -106,12 +119,14 @@ function TicketSelection() {
 					<button
 						onClick={handleCancel}
 						className='w-full sm:w-1/2 bg-gray-600 text-white py-4 rounded-lg hover:bg-gray-700 transition border border-gray-500'
+						aria-label='Cancel and go back to the home page'
 					>
 						Cancel
 					</button>
 					<button
 						onClick={handleNext}
 						className='w-full sm:w-1/2 bg-blue-600 text-white py-4 rounded-lg hover:bg-blue-700 transition border border-blue-500'
+						aria-label='Proceed to the next step'
 					>
 						Next
 					</button>

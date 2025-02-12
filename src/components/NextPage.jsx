@@ -140,10 +140,14 @@ function TicketForm() {
 						}
 					}}
 					className='space-y-4'
+					aria-live='polite'
 				>
 					{/* Avatar Upload */}
 					<div>
-						<label className='block text-sm font-medium text-gray-300'>
+						<label
+							htmlFor='avatar-upload'
+							className='block text-sm font-medium text-gray-300'
+						>
 							Profile Picture
 						</label>
 
@@ -167,6 +171,7 @@ function TicketForm() {
 								accept='image/*'
 								onChange={handleFileChange}
 								className='hidden'
+								aria-describedby='avatar-error'
 							/>
 
 							{/* Image Preview inside the box */}
@@ -181,7 +186,13 @@ function TicketForm() {
 
 						{/* Error Message */}
 						{errors.avatar && (
-							<span className='text-red-500 text-sm'>{errors.avatar}</span>
+							<span
+								id='avatar-error'
+								className='text-red-500 text-sm'
+								role='alert'
+							>
+								{errors.avatar}
+							</span>
 						)}
 						{loading && (
 							<span className='text-blue-500 text-sm'>Uploading image...</span>
@@ -190,42 +201,68 @@ function TicketForm() {
 
 					{/* Full Name Input */}
 					<div>
-						<label className='block text-sm font-medium text-gray-300'>
+						<label
+							htmlFor='full-name'
+							className='block text-sm font-medium text-gray-300'
+						>
 							Full Name
 						</label>
 						<input
+							id='full-name'
 							type='text'
 							value={fullName}
 							onChange={(e) => setFullName(e.target.value)}
 							className='w-full p-3 mt-2 border border-gray-600 rounded-lg text-gray-900'
+							aria-describedby='full-name-error'
 						/>
 						{errors.fullName && (
-							<span className='text-red-500 text-sm'>{errors.fullName}</span>
+							<span
+								id='full-name-error'
+								className='text-red-500 text-sm'
+								role='alert'
+							>
+								{errors.fullName}
+							</span>
 						)}
 					</div>
 
 					{/* Email Input */}
 					<div>
-						<label className='block text-sm font-medium text-gray-300'>
+						<label
+							htmlFor='email'
+							className='block text-sm font-medium text-gray-300'
+						>
 							Email Address
 						</label>
 						<input
+							id='email'
 							type='email'
 							value={email}
 							onChange={(e) => setEmail(e.target.value)}
 							className='w-full p-3 mt-2 border border-gray-600 rounded-lg text-gray-900'
+							aria-describedby='email-error'
 						/>
 						{errors.email && (
-							<span className='text-red-500 text-sm'>{errors.email}</span>
+							<span
+								id='email-error'
+								className='text-red-500 text-sm'
+								role='alert'
+							>
+								{errors.email}
+							</span>
 						)}
 					</div>
 
 					{/* Special Request (Optional) */}
 					<div>
-						<label className='block text-sm font-medium text-gray-300'>
+						<label
+							htmlFor='special-request'
+							className='block text-sm font-medium text-gray-300'
+						>
 							Special Request (Optional)
 						</label>
 						<textarea
+							id='special-request'
 							value={specialRequest}
 							onChange={(e) => setSpecialRequest(e.target.value)}
 							className='w-full p-3 mt-2 border border-gray-600 rounded-lg text-gray-900'
@@ -238,6 +275,7 @@ function TicketForm() {
 						type='submit'
 						className='w-full mt-6 bg-blue-600 text-white py-4 rounded-lg hover:bg-blue-700 transition border border-blue-500'
 						disabled={loading}
+						aria-live='polite'
 					>
 						{loading ? 'Uploading...' : 'Generate Ticket'}
 					</button>
