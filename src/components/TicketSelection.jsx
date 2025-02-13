@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { motion } from 'framer-motion'; // Import motion for animation
 
 const TicketSelection = () => {
 	const [selectedTicket, setSelectedTicket] = useState(null);
@@ -38,7 +39,6 @@ const TicketSelection = () => {
 	};
 
 	return (
-<<<<<<< HEAD
 		<div className='min-h-screen flex flex-col items-center justify-center bg-[#061B1F] text-white p-6'>
 			<div className='w-full max-w-xl bg-[#0D2A30] p-8 rounded-lg shadow-lg'>
 				<div className='flex justify-between items-center pb-3'>
@@ -48,138 +48,89 @@ const TicketSelection = () => {
 				<div className='relative w-full'>
 					<div className='absolute bottom-0 left-0 w-full h-1 bg-black'>
 						<div className='h-full bg-teal-300' style={{ width: '35%' }}></div>
-=======
-		<div className='flex flex-col items-center justify-center min-h-screen bg-[#0a1b1e] p-6 text-white'>
-			<motion.div
-				initial={{ opacity: 0 }}
-				animate={{ opacity: 1 }}
-				transition={{ duration: 1 }}
-				className='bg-[#102a2d] p-8 rounded-2xl shadow-xl w-full max-w-3xl border border-gray-700'
-				aria-labelledby='ticket-selection-heading'
-			>
-				<h2
-					id='ticket-selection-heading'
-					className='text-3xl font-bold text-center border-b border-gray-700 pb-4'
-				>
-					Techember Fest &apos;25
-				</h2>
-				<p className='text-center mt-4 text-gray-400'>
-					Join us for an unforgettable experience at TechFest! Secure your spot
-					now.
-				</p>
-				<p className='text-center mt-2 text-gray-400 border-b border-gray-700 pb-4'>
-					📍 Lagos, Nigeria | 📅 March 15, 2025 | ⏰ 7:00 PM
-				</p>
-
-				<div className='mt-6 border border-gray-700 p-6 rounded-lg'>
-					<h3 className='text-lg font-semibold mb-3' id='ticket-type-heading'>
-						Select Ticket Type:
-					</h3>
-					<div className='flex flex-col sm:flex-row sm:gap-4'>
-						<button
-							onClick={() => setTicketType('Regular')}
-							aria-pressed={ticketType === 'Regular'}
-							aria-labelledby='ticket-type-heading'
-							className={`p-6 w-full sm:w-1/3 rounded-lg border text-left mb-4 sm:mb-0 ${
-								ticketType === 'Regular'
-									? 'bg-blue-500 text-white border-blue-400'
-									: 'bg-[#0d1f21] border-gray-600'
-							}`}
-						>
-							<span className='block text-lg font-semibold'>Free</span>
-							<span className='block text-sm mt-1'>REGULAR ACCESS</span>
-							<span className='block text-xs text-gray-400 mt-1'>20/52</span>
-						</button>
-						<button
-							onClick={() => setTicketType('VIP')}
-							aria-pressed={ticketType === 'VIP'}
-							aria-labelledby='ticket-type-heading'
-							className={`p-6 w-full sm:w-1/3 rounded-lg border text-left mb-4 sm:mb-0 ${
-								ticketType === 'VIP'
-									? 'bg-blue-500 text-white border-blue-400'
-									: 'bg-[#0d1f21] border-gray-600'
-							}`}
-						>
-							<span className='block text-lg font-semibold'>$150</span>
-							<span className='block text-sm mt-1'>VIP ACCESS</span>
-							<span className='block text-xs text-gray-400 mt-1'>20/52</span>
-						</button>
-						<button
-							onClick={() => setTicketType('VVIP')}
-							aria-pressed={ticketType === 'VVIP'}
-							aria-labelledby='ticket-type-heading'
-							className={`p-6 w-full sm:w-1/3 rounded-lg border text-left ${
-								ticketType === 'VVIP'
-									? 'bg-blue-500 text-white border-blue-400'
-									: 'bg-[#0d1f21] border-gray-600'
-							}`}
-						>
-							<span className='block text-lg font-semibold'>$150</span>
-							<span className='block text-sm mt-1'>VVIP ACCESS</span>
-							<span className='block text-xs text-gray-400 mt-1'>20/52</span>
-						</button>
->>>>>>> 538a0577fba2cc7d597f1c6c903308765113cd68
 					</div>
 				</div>
-
-				<div className='bg-gradient-to-r from-[#0D2A30] to-[#092026] p-8 rounded-lg mt-6 text-center border border-gray-700'>
-					<h3 className='text-2xl font-bold'>Techember Fest &apos;25</h3>
-					<hr className='my-3 border-gray-700' />
-					<p className='text-sm mt-3'>
-						Join us for an unforgettable experience at <br /> [Event Name]!
-						Secure your spot now.
-					</p>
-					<p className='mt-3 text-xs'>
-						📍 [Event Location] | March 15, 2025 | 7:00 PM
-					</p>
-				</div>
-
-				<hr className='my-6 border-gray-700' />
-
-				<h3 className='mt-6 text-sm'>Select Ticket Type:</h3>
-				<div className='flex flex-col md:flex-row gap-3 mt-3 border border-gray-700 p-6 rounded-lg bg-[#071E22]'>
-					{tickets.map((ticket, index) => (
-						<div
-							key={index}
-							onClick={() => handleSelect(ticket)}
-							className={`p-8 rounded-lg cursor-pointer text-left flex-1 border ${
-								selectedTicket?.type === ticket.type
-									? 'border-teal-400 bg-teal-600' // Lighter background when selected
-									: 'border-gray-700 bg-[#0A252A]'
-							} hover:border-teal-400 transition duration-200`}
-						>
-							<p className='font-bold'>{ticket.price}</p>
-							<p className='text-xs'>{ticket.access}</p>
-							<p className='text-xs opacity-75'>{ticket.available}</p>
-						</div>
-					))}
-				</div>
-				{error && <p className='text-red-400 text-sm mt-3'>{error}</p>}
-
-				<h3 className='mt-6 text-sm'>Number of Tickets</h3>
-				<select
-					className='w-full mt-3 p-3 rounded-lg bg-[#092026] text-white border border-gray-700'
-					value={numTickets}
-					onChange={(e) => setNumTickets(e.target.value)}
+				{/* Motion.div wrapper for animated content */}
+				<motion.div
+					initial={{ opacity: 0 }}
+					animate={{ opacity: 1 }}
+					transition={{ duration: 1 }}
+					className='bg-[#102a2d] p-8 rounded-2xl shadow-xl w-full max-w-3xl border border-gray-700'
+					aria-labelledby='ticket-selection-heading'
 				>
-					{[...Array(10).keys()].map((n) => (
-						<option key={n + 1} value={n + 1}>
-							{n + 1}
-						</option>
-					))}
-				</select>
+					<div className='border border-gray-700 p-4 rounded-lg'>
+						<h2
+							id='ticket-selection-heading'
+							className='text-3xl font-bold text-center border-b border-gray-700 pb-4'
+						>
+							Techember Fest &apos;25
+						</h2>
+						<p className='text-center mt-4 text-gray-400'>
+							Join us for an unforgettable experience at TechFest! Secure your
+							spot now.
+						</p>
+						<p className='text-center mt-2 text-gray-400  pb-4'>
+							📍 Lagos, Nigeria | 📅 March 15, 2025 | ⏰ 7:00 PM
+						</p>
+					</div>
+					<hr className='border-t border-gray-700 mt-4' />
+					{/* Ticket selection content */}
+					<div className='mt-6 border border-gray-700 p-6 rounded-lg'>
+						<h3 className='text-lg font-semibold mb-3' id='ticket-type-heading'>
+							Select Ticket Type:
+						</h3>
+						<div className='flex flex-col sm:flex-row sm:gap-4'>
+							{tickets.map((ticket) => (
+								<button
+									key={ticket.type}
+									onClick={() => handleSelect(ticket)}
+									aria-pressed={selectedTicket?.type === ticket.type}
+									aria-labelledby='ticket-type-heading'
+									className={`p-6 w-full sm:w-1/3 rounded-lg border text-left mb-4 sm:mb-0 ${
+										selectedTicket?.type === ticket.type
+											? 'bg-teal-500 text-white border-blue-400'
+											: 'bg-[#0d1f21] border-gray-600'
+									}`}
+								>
+									<span className='block text-lg font-semibold'>
+										{ticket.price}
+									</span>
+									<span className='block text-sm mt-1'>{ticket.access}</span>
+									<span className='block text-xs text-gray-400 mt-1'>
+										{ticket.available}
+									</span>
+								</button>
+							))}
+						</div>
+					</div>
 
-				<div className='flex flex-col md:flex-row justify-between mt-6 gap-3'>
-					<button className='flex-1 px-5 py-3 bg-gray-700 rounded-lg'>
-						Cancel
-					</button>
-					<button
-						onClick={handleNext}
-						className='flex-1 px-5 py-3 bg-teal-500 rounded-lg'
+					{error && <p className='text-red-400 text-sm mt-3'>{error}</p>}
+
+					<h3 className='mt-6 text-sm'>Number of Tickets</h3>
+					<select
+						className='w-full mt-3 p-3 rounded-lg bg-[#092026] text-white border border-gray-700'
+						value={numTickets}
+						onChange={(e) => setNumTickets(e.target.value)}
 					>
-						Next
-					</button>
-				</div>
+						{[...Array(10).keys()].map((n) => (
+							<option key={n + 1} value={n + 1}>
+								{n + 1}
+							</option>
+						))}
+					</select>
+
+					<div className='flex flex-col md:flex-row justify-between mt-6 gap-3'>
+						<button className='flex-1 px-5 py-3 bg-gray-700 rounded-lg'>
+							Cancel
+						</button>
+						<button
+							onClick={handleNext}
+							className='flex-1 px-5 py-3 bg-teal-500 rounded-lg'
+						>
+							Next
+						</button>
+					</div>
+				</motion.div>
 			</div>
 		</div>
 	);
