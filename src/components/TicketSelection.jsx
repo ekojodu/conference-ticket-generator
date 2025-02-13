@@ -38,6 +38,7 @@ const TicketSelection = () => {
 	};
 
 	return (
+<<<<<<< HEAD
 		<div className='min-h-screen flex flex-col items-center justify-center bg-[#061B1F] text-white p-6'>
 			<div className='w-full max-w-xl bg-[#0D2A30] p-8 rounded-lg shadow-lg'>
 				<div className='flex justify-between items-center pb-3'>
@@ -47,6 +48,77 @@ const TicketSelection = () => {
 				<div className='relative w-full'>
 					<div className='absolute bottom-0 left-0 w-full h-1 bg-black'>
 						<div className='h-full bg-teal-300' style={{ width: '35%' }}></div>
+=======
+		<div className='flex flex-col items-center justify-center min-h-screen bg-[#0a1b1e] p-6 text-white'>
+			<motion.div
+				initial={{ opacity: 0 }}
+				animate={{ opacity: 1 }}
+				transition={{ duration: 1 }}
+				className='bg-[#102a2d] p-8 rounded-2xl shadow-xl w-full max-w-3xl border border-gray-700'
+				aria-labelledby='ticket-selection-heading'
+			>
+				<h2
+					id='ticket-selection-heading'
+					className='text-3xl font-bold text-center border-b border-gray-700 pb-4'
+				>
+					Techember Fest &apos;25
+				</h2>
+				<p className='text-center mt-4 text-gray-400'>
+					Join us for an unforgettable experience at TechFest! Secure your spot
+					now.
+				</p>
+				<p className='text-center mt-2 text-gray-400 border-b border-gray-700 pb-4'>
+					📍 Lagos, Nigeria | 📅 March 15, 2025 | ⏰ 7:00 PM
+				</p>
+
+				<div className='mt-6 border border-gray-700 p-6 rounded-lg'>
+					<h3 className='text-lg font-semibold mb-3' id='ticket-type-heading'>
+						Select Ticket Type:
+					</h3>
+					<div className='flex flex-col sm:flex-row sm:gap-4'>
+						<button
+							onClick={() => setTicketType('Regular')}
+							aria-pressed={ticketType === 'Regular'}
+							aria-labelledby='ticket-type-heading'
+							className={`p-6 w-full sm:w-1/3 rounded-lg border text-left mb-4 sm:mb-0 ${
+								ticketType === 'Regular'
+									? 'bg-blue-500 text-white border-blue-400'
+									: 'bg-[#0d1f21] border-gray-600'
+							}`}
+						>
+							<span className='block text-lg font-semibold'>Free</span>
+							<span className='block text-sm mt-1'>REGULAR ACCESS</span>
+							<span className='block text-xs text-gray-400 mt-1'>20/52</span>
+						</button>
+						<button
+							onClick={() => setTicketType('VIP')}
+							aria-pressed={ticketType === 'VIP'}
+							aria-labelledby='ticket-type-heading'
+							className={`p-6 w-full sm:w-1/3 rounded-lg border text-left mb-4 sm:mb-0 ${
+								ticketType === 'VIP'
+									? 'bg-blue-500 text-white border-blue-400'
+									: 'bg-[#0d1f21] border-gray-600'
+							}`}
+						>
+							<span className='block text-lg font-semibold'>$150</span>
+							<span className='block text-sm mt-1'>VIP ACCESS</span>
+							<span className='block text-xs text-gray-400 mt-1'>20/52</span>
+						</button>
+						<button
+							onClick={() => setTicketType('VVIP')}
+							aria-pressed={ticketType === 'VVIP'}
+							aria-labelledby='ticket-type-heading'
+							className={`p-6 w-full sm:w-1/3 rounded-lg border text-left ${
+								ticketType === 'VVIP'
+									? 'bg-blue-500 text-white border-blue-400'
+									: 'bg-[#0d1f21] border-gray-600'
+							}`}
+						>
+							<span className='block text-lg font-semibold'>$150</span>
+							<span className='block text-sm mt-1'>VVIP ACCESS</span>
+							<span className='block text-xs text-gray-400 mt-1'>20/52</span>
+						</button>
+>>>>>>> 538a0577fba2cc7d597f1c6c903308765113cd68
 					</div>
 				</div>
 
